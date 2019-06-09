@@ -1,3 +1,9 @@
+
+body{
+  transition: all 1s;
+
+}
+
 input {
   border: solid 1px black;
 }
@@ -22,22 +28,36 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  transition: background-color 1s;
 }
 
 .btn-success {
     color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+    background-color: #9cb39c;
+    border-color: #9cb39c;
 }
+.btn-success:hover {
+  background-color: #36b836;
+  border-color: #36b836;
+}
+
 
 .btn-delete {
     color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+    background-color: rgb(254, 121, 121);
+    border-color: rgb(254, 121, 121);
+}
+
+.btn-delete:hover {
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: blanchedalmond
 }
 
 h1{
@@ -46,11 +66,14 @@ h1{
 
 .products-container, .new-product-form{
   margin: 5% 10%;
+  transition: height 2s;
 }
 
 .product-wrapper{
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .btn-calculate{
@@ -60,9 +83,37 @@ h1{
 
 .new-product-form{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 h2{
   text-align: center;
+}
+
+.field{
+  width: 20%;
+}
+
+.toAdd{
+  height: 20px;
+  border-radius: 4px;
+  background-color: antiquewhite;
+}
+
+.qua{
+  height: 20px;
+  border-radius: 4px;
+  background-color: blanchedalmond
+}
+
+.create{
+  color: #fff;
+  background-color: #848bd2;
+  border-color: #848bd2;
+  margin-left: 10px;
+}
+.create:hover{
+  background-color: #3847e9;
+  border-color: #3847e9;
 }

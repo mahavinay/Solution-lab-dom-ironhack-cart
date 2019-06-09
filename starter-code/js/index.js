@@ -53,13 +53,13 @@ function createNewItem(){
   var productWrapper = document.createElement("div");
   productWrapper.setAttribute("class", "product-wrapper")
   
-  var nameTag = document.createElement("div")
   var nameSpan = document.createElement("span")
+  nameSpan.setAttribute("class", "field")
   nameSpan.innerHTML = productName
-  nameTag.appendChild(nameSpan)
-  productWrapper.appendChild(nameTag)
+  productWrapper.appendChild(nameSpan)
 
   var priceTag = document.createElement("div")
+  priceTag.setAttribute("class", "field")
   var priceSpan = document.createElement("span")
   priceSpan.setAttribute("class", "unit-price")
   priceSpan.innerHTML = price
@@ -68,6 +68,7 @@ function createNewItem(){
   productWrapper.appendChild(priceTag)
 
   var qtyTag = document.createElement("div")
+  qtyTag.setAttribute("class", "field")
   var qtyLabel = document.createElement("label")
   qtyLabel.innerHTML = "QTY"
   qtyLabel.setAttribute("for", "qty")
@@ -80,6 +81,7 @@ function createNewItem(){
   productWrapper.appendChild(qtyTag)
 
   var totalTag = document.createElement("div")
+  totalTag.setAttribute("class", "field")
   var totalSpan = document.createElement("span")
   totalSpan.setAttribute("class", "total-product-price")
   totalSpan.innerHTML = "0.00"
@@ -88,6 +90,7 @@ function createNewItem(){
   productWrapper.appendChild(totalTag)
 
   var deleteTag = document.createElement("div")
+  deleteTag.setAttribute("class", "field")
   var deleteButton = document.createElement("button")
   deleteButton.setAttribute("class", "btn btn-delete")
   deleteButton.innerHTML = "Delete"
@@ -97,21 +100,25 @@ function createNewItem(){
 
   var parent = document.getElementById("container")
   parent.appendChild(productWrapper)
+  toDelete();
+}
 
+function toDelete (){
+  deleteButtons = document.getElementsByClassName('btn-delete');
+  for(var i = 0; i < deleteButtons.length; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
 
   var container = document.getElementById("container")
-
-  for(var i = 0; i < deleteButtons.length; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+  toDelete();
+  
 
   createItemButton.onclick = createNewItem;
 };
