@@ -12,9 +12,7 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function dummy(){
 
-}
 
 function getTotalPrice() {
 
