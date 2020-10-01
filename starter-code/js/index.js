@@ -12,6 +12,10 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
+function dummy(){
+
+}
+
 function getTotalPrice() {
 
   var products = document.getElementsByClassName("product-wrapper")
